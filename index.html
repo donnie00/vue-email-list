@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vue Mail List</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+   <div id="app">
+      <div class="container text-center">
+         <h1>Fetching mails</h1>
+         <ul class="list-unstyled">
+            <li v-for="(mail, i) in mailList">
+               <span class="fw-bold">Mail numero {{ i }}. </span> {{ mail }}
+            </li>
+         </ul>
+         <!-- <button class="btn btn-primary">Get 10 mails!</button> -->
+      </div>
+   </div>
+
+   <script src="./js/main.js"></script>
+</body>
+
+</html>
