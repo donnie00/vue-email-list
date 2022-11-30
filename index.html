@@ -15,12 +15,19 @@
    <div id="app">
       <div class="container text-center">
          <h1>Fetching mails</h1>
-         <ul class="list-unstyled">
-            <li v-for="(mail, i) in mailList">
-               <span class="fw-bold">Mail numero {{ i }}. </span> {{ mail }}
-            </li>
-         </ul>
-         <!-- <button class="btn btn-primary">Get 10 mails!</button> -->
+         <small class="text-muted">Clicca sull'email per copiarla! </small>
+         <table class="table table-striped table-dark table-hover my-3">
+            <thead class="table-primary">
+               <th>Mails generated</th>
+            </thead>
+            <tbody class="table-group-divider">
+               <tr @click.prevent="copyMail(mail)" v-for="mail in mailList">
+                  <td><a class="text-decoration-none link-light" href="#" prevent.default>{{ mail }}</a></td>
+               </tr>
+            </tbody>
+         </table>
+
+         <button @click="printMails()" class="btn btn-primary">Get new emails</button>
       </div>
    </div>
 
