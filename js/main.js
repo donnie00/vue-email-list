@@ -11,8 +11,6 @@ createApp({
 	//inserisci qui le tue funzioni
 	methods: {
 		fetchMails() {
-			this.fetchedMail = [];
-
 			axios
 				.get('https://flynn.boolean.careers/exercises/api/random/mail')
 				.then((mail) => {
@@ -20,6 +18,7 @@ createApp({
 
 					if (this.fetchedMail.length === 10) {
 						this.mailList = this.fetchedMail;
+						this.fetchedMail = [];
 					}
 				});
 		},
